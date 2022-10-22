@@ -3,10 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class CanvasController
 {
-
     private ColliderHandler _colliderHandler;
     private CanvasView _canvasView;
-
 
     public CanvasController(CanvasView canvasView, ColliderHandler colliderHandler)
     {
