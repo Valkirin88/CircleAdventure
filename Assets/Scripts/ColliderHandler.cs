@@ -6,11 +6,17 @@ public class ColliderHandler : MonoBehaviour
     public Action OnDIed;
     public Action OnAllBonusGot;
     public Action OnBonusGot;
+    private int _bonusAmount = 0;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.GetComponent<BonusView>())
         {
+            _bonusAmount++;
+            if(_bonusAmount == 7)
+            {
+                OnAllBonusGot?.Invoke();
+            }
             Destroy(collision.gameObject);
             OnBonusGot?.Invoke();
         }
