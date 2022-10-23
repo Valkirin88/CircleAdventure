@@ -7,6 +7,7 @@ public class ColliderHandler : MonoBehaviour
     public Action OnAllBonusGot;
     public Action OnBonusGot;
     private int _bonusAmount = 0;
+    private float _deathTimer = 1f;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,7 +23,7 @@ public class ColliderHandler : MonoBehaviour
         }
         else if (collision.GetComponent<EnemyView>())
         {
-            Destroy(gameObject);
+            Destroy(gameObject, _deathTimer);
             OnDIed?.Invoke();
         }
     }

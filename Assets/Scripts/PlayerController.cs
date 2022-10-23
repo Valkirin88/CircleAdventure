@@ -64,16 +64,5 @@ public class PlayerController : MonoBehaviour
     {
       return _positionHandler.GetPosition();
     }
-
-
-    //if (Input.touchCount > 0)
-    //{
-    //    while (_touchTransform.position != transform.position)
-    //    {
-    //        transform.position = Vector2.MoveTowards(transform.position, Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position), _speed * Time.deltaTime);
-    //    }
-    //}
-
-
 }
 
