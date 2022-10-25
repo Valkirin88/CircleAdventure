@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 653852743845076309}
   - component: {fileID: 653852743845076308}
-  - component: {fileID: 653852743845076266}
   - component: {fileID: 653852743845076267}
   - component: {fileID: 653852743845076264}
   - component: {fileID: 653852743845076265}
+  - component: {fileID: 3083439843752751449}
+  - component: {fileID: 3014487943125031550}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -34,7 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &653852743845076308
 SpriteRenderer:
@@ -88,19 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &653852743845076266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 653852743845076311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 760e4a13e8a57bc4c8a0651ac7d18f48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 10
 --- !u!58 &653852743845076267
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -150,3 +138,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3083439843752751449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653852743845076311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eab6e4a03ebce4aaa453b4ab94e8ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 10
+--- !u!114 &3014487943125031550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653852743845076311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a952fd1bb3b657469bfb6a5217d1854, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _burstSprite: {fileID: 21300000, guid: cf27c5d68da824a4eab200b4ddf916e1, type: 3}

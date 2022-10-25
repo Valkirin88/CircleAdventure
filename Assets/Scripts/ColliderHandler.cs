@@ -11,7 +11,7 @@ public class ColliderHandler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.GetComponent<BonusView>())
+        if(collision.GetComponent(typeof(IBonus)))
         {
             _bonusAmount++;
             if(_bonusAmount == 7)

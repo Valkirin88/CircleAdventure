@@ -4,7 +4,7 @@ public class BonusController
 {
     private BonusView _bonusView;
     [SerializeField]
-    private float _movingDistance = 0.3f;
+    private float _movingDistance = 0.1f;
     [SerializeField]
     private float _speed = 1f;
 
@@ -27,12 +27,7 @@ public class BonusController
         {
             
             var pos = Vector3.Lerp(_endPosition, _coinPosition, Mathf.PingPong(Time.time, _movingDistance));
-            _coinPosition = pos;
-            //_coinPosition.y = _coinPosition.y + Mathf.PingPong(Time.deltaTime * _speed, _movingDistance);
-            _bonusView.transform.position = _coinPosition;
+           _bonusView.transform.position = Vector3.Lerp(_endPosition, _coinPosition, Mathf.PingPong(Time.time, _movingDistance));
         }
-
-        //_bonusView.GetComponent<Transform>().position.y = Mathf.PingPong(Time.deltaTime * _speed, _movingDistance);
-        //_bonusView.BonusTransform.position.y= _bonusView.BonusTransform.position.y + Mathf.PingPong(Time.deltaTime * _speed, _movingDistance);
     }
 }
