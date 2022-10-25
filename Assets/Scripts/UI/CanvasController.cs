@@ -14,8 +14,8 @@ public class CanvasController
         _colliderHandler.OnAllBonusGot += ShowLevelComplete;
         _colliderHandler.OnDIed += ShowGameOver;
         _canvasView.RestartButton.gameObject.SetActive(false);
-        _canvasView.GameOverText.gameObject.SetActive(false);
-        _canvasView.LevelCompletedText.gameObject.SetActive(false);
+        _canvasView._gameOverText.gameObject.SetActive(false);
+        _canvasView._levelCompletedText.gameObject.SetActive(false);
         _canvasView.RestartButton.onClick.AddListener(RestartGame);
     }
 
@@ -27,21 +27,21 @@ public class CanvasController
 
     private void ShowGameOver()
     {
-        _canvasView.GameOverText.gameObject.SetActive(true);
+        _canvasView._gameOverText.gameObject.SetActive(true);
         _canvasView.RestartButton.gameObject.SetActive(true);
         Time.timeScale = 0;
     }
 
     private void ShowLevelComplete()
     {
-        _canvasView.LevelCompletedText.gameObject.SetActive(true);
+        _canvasView._levelCompletedText.gameObject.SetActive(true);
         _canvasView.RestartButton.gameObject.SetActive(true);
         Time.timeScale = 0;
     }
 
     private void GetCoin()
     {
-        _canvasView.CoinsCounter++;
-        _canvasView.CoinsCounterText.text = $"Coins: {_canvasView.CoinsCounter}";
+        _canvasView._coinsCounter++;
+        _canvasView._coinsCounterText.text = $"Coins: {_canvasView._coinsCounter}";
     }
 } 

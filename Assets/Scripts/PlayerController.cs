@@ -42,21 +42,20 @@ public class PlayerController : MonoBehaviour
 
     private void MovePlayer()
     {
-        if (!_isPositionReached)
+        if (_isPositionReached)
+        {
+            _isPositionReached = false;
+        }
+        else
         {
             var offset = _speed * Time.deltaTime;
             var distance = Vector2.Distance(transform.position, _targetPosition);
             transform.position = Vector2.MoveTowards(transform.position, _targetPosition, offset);
-            if (distance <0.1)
+            if (distance < 0.1)
             {
-                _isPositionReached=true;
+                _isPositionReached = true;
                 _targetPosition = GetPosition();
             }
-        }
-        else if(_isPositionReached)
-        {
-            _isPositionReached = false;
-            return;
         }
     }
 
