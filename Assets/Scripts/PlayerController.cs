@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -8,61 +9,46 @@ public class PlayerController : MonoBehaviour
     private int _positionsCounter = 0;
     private Vector2 _mousePosition;
     private Vector2 _targetPosition;
-    private PositionHandler _positionHandler;
+    private Queue<Vector2> _queue;
 
     private void Awake()
     {
-        _positionHandler = new PositionHandler();
+        _queue = new Queue<Vector2>();
+        _targetPosition = transform.position;
     }
     void Update()
     {
-        if (_positionsCounter > 0)
+        if (_queue.Count > 0)
         {
             MovePlayer();
         }
-        else if(_positionsCounter == 0)
-        {
-            _targetPosition = transform.position;
-        }
-
+       
         if (Input.GetMouseButtonDown(0))
         {
-            _positionsCounter++;
             _mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            SavePosition();
+            _queue.Enqueue(_mousePosition);
             _isPositionReached = false;
             MovePlayer();
         }
-    }
-
-    private void SavePosition()
-    {
-        _positionHandler.AddPosition(_mousePosition);
     }
 
     private void MovePlayer()
     {
-        if (!_isPositionReached)
+        if (_isPositionReached)
+        {
+            _isPositionReached = false;
+        }
+        else
         {
             var offset = _speed * Time.deltaTime;
             var distance = Vector2.Distance(transform.position, _targetPosition);
             transform.position = Vector2.MoveTowards(transform.position, _targetPosition, offset);
-            if (distance <0.1)
+            if (distance < 0.1)
             {
-                _isPositionReached=true;
-                _targetPosition = GetPosition();
+                _isPositionReached = true;
+                _targetPosition = _queue.Dequeue();
             }
         }
-        else if(_isPositionReached)
-        {
-            _isPositionReached = false;
-            return;
-        }
-    }
-
-    private Vector2 GetPosition()
-    {
-      return _positionHandler.GetPosition();
     }
 }
 
