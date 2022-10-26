@@ -10,12 +10,10 @@ public class BonusView : MonoBehaviour, IBonus
     {
         _bonusPosition = transform.position;
         _offsetPosition = new Vector3(transform.position.x, transform.position.y + _offset, transform.position.z);
-
     }
 
     private void Update()
     {
         transform.position = Vector3.Lerp(_bonusPosition, _offsetPosition, Mathf.PingPong(Time.time, _offset));
-
     }
 }
