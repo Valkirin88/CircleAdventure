@@ -753,6 +753,7 @@ MonoBehaviour:
   _canvasView: {fileID: 815011196}
   _colliderHandler: {fileID: 1367640390}
   _soundView: {fileID: 1812163790}
+  _playerView: {fileID: 1367640406}
 --- !u!4 &926844431
 Transform:
   m_ObjectHideFlags: 0
@@ -1415,7 +1416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71760b3bb7a0464b994903a58afac73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1367640391
+--- !u!114 &1367640406
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1424,23 +1425,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1367640381}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a952fd1bb3b657469bfb6a5217d1854, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a28b4c27a87f7c43bd8781c2464452c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _burstSprite: {fileID: 21300000, guid: 6b24e9777010e77439b5543088eec0fc, type: 3}
---- !u!114 &1367640399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1367640381}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 760e4a13e8a57bc4c8a0651ac7d18f48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 10
+  SpriteRenderer: {fileID: 0}
+  _speed: 20
 --- !u!4 &1496390781 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7756106409997371082, guid: b891765d91b77094397bb832160d10c2, type: 3}
@@ -2445,10 +2435,12 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 6b24e9777010e77439b5543088eec0fc, type: 3}
     - target: {fileID: 3083439843752751449, guid: a2ec1ad54dd75d848969d46723eb5dab, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
+    - {fileID: 3014487943125031550, guid: a2ec1ad54dd75d848969d46723eb5dab, type: 3}
+    - {fileID: 3083439843752751449, guid: a2ec1ad54dd75d848969d46723eb5dab, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: a2ec1ad54dd75d848969d46723eb5dab, type: 3}
 --- !u!1001 &7756106410321943787
