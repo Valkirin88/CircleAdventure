@@ -1,10 +1,11 @@
 using UnityEngine;
+using Zenject;
 
 public class Root : MonoBehaviour
 {
     [SerializeField]
     private CanvasView _canvasView;
-    [SerializeField]
+    [Inject]
     private ColliderHandler _colliderHandler;
     [SerializeField]
     private SoundView _soundView;
@@ -13,6 +14,8 @@ public class Root : MonoBehaviour
 
     private SoundController _soundController;
     private CanvasController _canvasController;
+   
+    [Inject]
     private PlayerController _playerController;
 
     private void Awake()

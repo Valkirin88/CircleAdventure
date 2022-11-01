@@ -1,10 +1,12 @@
 using UnityEngine;
+using Zenject;
 
 public class SpriteManager : MonoBehaviour
 {
    [SerializeField]
     private Sprite _burstSprite;
     private SpriteRenderer _spriteRenderer;
+    [Inject]
     private ColliderHandler _colliderHandler;
 
     private void Awake()
