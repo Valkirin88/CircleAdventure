@@ -11,7 +11,7 @@ public class SpriteManager : MonoBehaviour
 
     private void Awake()
     {
-        _colliderHandler = GetComponent<ColliderHandler>();
+        //_colliderHandler = GetComponent<ColliderHandler>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _colliderHandler.OnDIed += ChangeSprite;
     }

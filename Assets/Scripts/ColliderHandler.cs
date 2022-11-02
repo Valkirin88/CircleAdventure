@@ -17,7 +17,7 @@ public class ColliderHandler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent(typeof(IBonus)))
+        if (collision.GetComponent<IBonus>() != null)
         {
             _bonusAmount--;
             if(_bonusAmount <= 0)
@@ -27,7 +27,7 @@ public class ColliderHandler : MonoBehaviour
             Destroy(collision.gameObject);
             OnBonusGot?.Invoke();
         }
-        else if (collision.GetComponent(typeof(IEnemy)))
+        else if (collision.GetComponent<IEnemy>() != null)
         {
             Destroy(gameObject, _deathTimer);
             OnDIed?.Invoke();

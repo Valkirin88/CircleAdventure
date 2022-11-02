@@ -5,7 +5,6 @@ public class Root : MonoBehaviour
 {
     [SerializeField]
     private CanvasView _canvasView;
-    [Inject]
     private ColliderHandler _colliderHandler;
     [SerializeField]
     private SoundView _soundView;
@@ -15,18 +14,22 @@ public class Root : MonoBehaviour
     private SoundController _soundController;
     private CanvasController _canvasController;
    
-    [Inject]
+   
     private PlayerController _playerController;
 
-    private void Awake()
-    {
-        _canvasController = new CanvasController(_canvasView, _colliderHandler);
-        _soundController = new SoundController(_soundView, _colliderHandler);
-        _playerController = new PlayerController(_playerView, _colliderHandler);
-    }
+    
 
     private void Update()
     {
         _playerController.Update();
+    }
+
+    [Inject]
+    private void Constructor(ColliderHandler colliderHandler)
+    {
+        _colliderHandler = colliderHandler;
+        _canvasController = new CanvasController(_canvasView, _colliderHandler);
+        _soundController = new SoundController(_soundView, _colliderHandler);
+        _playerController = new PlayerController(_playerView, _colliderHandler);
     }
 }
